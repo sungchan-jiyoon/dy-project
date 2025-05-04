@@ -16,6 +16,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            #chunsik{
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
@@ -43,10 +48,13 @@
                             <div class="text-center text-xxl-start">
                                 <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Design &middot; Development &middot; Marketing</div></div>
                                 <div class="fs-3 fw-light text-muted">김소연은 김지윤의 동셍</div>
-                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">우리집서열1위메리</span></h1>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
+                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline" id="test">우리집서열1위메리</span></h1>
+                                
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3" style="align-items: baseline;">
+                                    <img id="chunsik" src="/assets/chunsik.gif" onclick="setRiseCount()"/>
+                                    <h3 class="display-3 fw-bolder mb-3">
+                                        <span id="rise" class="text-gradient d-inline">0</span>
+                                    </h3>
                                 </div>
                             </div>
                         </div>
@@ -213,5 +221,20 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            // 춘식이를 클릭하면 라이즈가 올라간다
+            // 1. 라이즈의 현재값을 가져온다
+            // 2. 라이즈의 현재값에 +1한 값을 라이즈에 저장한다
+            // 3. 라이즈의 현재값을 1씩 올린다
+            
+            function setRiseCount() {
+                let riseCnt = document.getElementById('rise').textContent
+                
+                riseCnt++;
+
+                document.getElementById('rise').innerText=riseCnt
+
+            }
+        </script>
     </body>
 </html>
